@@ -1,2 +1,2 @@
 # messager
-A minimalistic social network, created using NodeJS + ReactJS
+A minimalistic social network, created using NodeJS + ReactJS.
