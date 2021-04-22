@@ -5,7 +5,6 @@ const server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server(server);
 const db_Worker = require('./DataBase_Worker');
-const crypto = require('crypto')
 
 const DataWorker = new db_Worker("db.db")
 
@@ -17,7 +16,7 @@ app.use(express.static('public'))
 io.on('connection', (socket) => {
     DataWorker.excute_request(`INSERT INTO messages VALUES ("User connected");`)
     socket.on('chat message', (msg) => {
-        // io.emit('chat message', msg);
+        io.emit('chat message', msg);
         DataWorker.excute_request(`INSERT INTO messages VALUES ("${msg}");`)
     });
     socket.on('disconnect', () => {
