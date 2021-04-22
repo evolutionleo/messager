@@ -15,7 +15,9 @@ io.on('connection', (socket) => {
     DataWorker.excute_request(`INSERT INTO messages VALUES ("User connected");`)
     socket.on('chat message', (msg) => {
         io.emit('chat message', msg);
-        DataWorker.excute_request(`INSERT INTO messages VALUES ("${msg}");`)
+        DataWorker.excute_request(`INSERT INTO messages VALUES ("${msg}");`);
+
+        console.log('Chat message received! Text: '+msg);
     });
     socket.on('disconnect', () => {
         DataWorker.excute_request(`INSERT INTO messages VALUES ("User disconnected");`)
