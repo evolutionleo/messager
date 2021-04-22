@@ -52,3 +52,10 @@ API
 |----------------|:---------:|:----------------:|
 | /api/messages | Returns JSON with all messages | GET |
 | /api/init_table | Initializes the messages table(dev) | GET |
+
+
+Let's add in the future
+---
+- [ ] Design
+    - [ ] HZ
+    - [X] HZ
