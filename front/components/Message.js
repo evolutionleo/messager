@@ -1,5 +1,4 @@
-export default function(props) {
-
+export default function Message(props) {
     return (
         <li className="message">
             <div className="message-content">

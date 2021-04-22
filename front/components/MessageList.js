@@ -1,16 +1,12 @@
 import Message from '@components/Message';
+import { useEffect } from 'react';
 
-export default function(props) {
-    var messages = [];
-    for(let i = 0; i < props.messages.length; ++i) {
-        messages.push(<Message text={props.messages[i].text} />)
-    }
-
+export default function MessageList(props) {
     return (
         <div>
             This is a list of messages:
             <ul>
-                {messages}
+                {props.messages.map((message, id) => <Message key={id} text={message} />)}
             </ul>
         </div>
     )

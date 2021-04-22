@@ -6,6 +6,13 @@ const router = express.Router()
 const port = 8080
 const hostname = "0.0.0.0"
 
+const cors = require('cors')
+const corsOptions = {
+    origin: 'localhost:3000'
+}
+router.use(cors(corsOptions));
+
+
 const DataWorker = new db_Worker("db.db")
 
 router.get('/api/init_table', (req, res) => {
