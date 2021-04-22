@@ -21,4 +21,4 @@ router.get('/api/messages', (req,res) => {
 })
 
 app.use('/', router)
-app.listen(port, hostname, () => console.log("Api Up"))
+app.listen(port, hostname, () => console.log("Api Up on port: "+port))

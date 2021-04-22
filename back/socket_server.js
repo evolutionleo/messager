@@ -24,4 +24,4 @@ io.on('connection', (socket) => {
     });
 });
 
-server.listen(port, hostname, () => console.log("Server Up"))
+server.listen(port, hostname, () => console.log("Server Up on port: "+port))
