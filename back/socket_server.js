@@ -8,10 +8,8 @@ const db_Worker = require('./DataBase_Worker');
 
 const DataWorker = new db_Worker("db.db")
 
-const port = 3000
+const port = 8000
 const hostname = "0.0.0.0"
-
-app.use(express.static('public'))
 
 io.on('connection', (socket) => {
     DataWorker.excute_request(`INSERT INTO messages VALUES ("User connected");`)
