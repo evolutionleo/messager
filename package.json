@@ -1,0 +1,22 @@
+{
+  "name": "messager",
+  "version": "1.0.0",
+  "description": "A minimalistic social network, created using NodeJS + ReactJS.",
+  "main": "index.js",
+  "scripts": {
+    "install": "cd back && npm install && cd ../front && npm install",
+    "dev": "cd back && node api_server.js && node socket_server.js && cd ../front && npm run dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evolutionleo/messager.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/evolutionleo/messager/issues"
+  },
+  "homepage": "https://github.com/evolutionleo/messager#readme"
+}
