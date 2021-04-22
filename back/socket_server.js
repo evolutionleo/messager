@@ -12,7 +12,7 @@ const DataWorker = new db_Worker("db.db")
 const port = 3000
 const hostname = "0.0.0.0"
 
-app.use(express.static('../front'))
+app.use(express.static('public'))
 
 io.on('connection', (socket) => {
     DataWorker.excute_request(`INSERT INTO messages VALUES ("User connected");`)
