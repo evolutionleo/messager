@@ -56,6 +56,9 @@ API
 
 Let's add in the future
 ---
-- [ ] Design
-    - [ ] HZ
-    - [X] HZ
+- [ ] something
+
+Contributing
+---
+**Issues are welcome😄
+If you want to add or remove something, then you can safely fork the project**
