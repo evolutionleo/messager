@@ -2,6 +2,7 @@
     "compilerOptions": {
         "baseUrl": "./",
         "paths": {
+            "@env": ["env.js"],
             "@components/*": ["components/*"]
         }
     }
