@@ -8,7 +8,7 @@ const hostname = "0.0.0.0"
 
 const cors = require('cors')
 const corsOptions = {
-    origin: 'localhost:3000'
+    origin: 'http://localhost:3000'
 }
 router.use(cors(corsOptions));
 

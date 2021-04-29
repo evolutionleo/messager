@@ -7,7 +7,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 else {
     api_port = 8080;
-    origin = "locahost"
+    origin = "127.0.0.1"
 }
 
 api_url = "http://" + origin + ":" + api_port + "/api"

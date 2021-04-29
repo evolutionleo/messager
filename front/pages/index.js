@@ -13,7 +13,8 @@ export default function Home() {
       <main className={styles.main}>
         <h1>Haha Next.js go brrrrr</h1>
         {/* Pog! this is a button that does the link thing */}
-        <Link href="/chat" passHref>
+        {/* <Link href="/chat" passHref> */}
+        <Link href="/journal" passHref>
           <button component="a">
             Go to chat!
           </button>

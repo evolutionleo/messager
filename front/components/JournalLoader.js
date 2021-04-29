@@ -1,20 +1,38 @@
 import React from 'react';
 import { useState, useEffect } from "react"
 
-export default function JournalLoader(props) {
-    var points = 1;
-    useEffect(() => {
-        points++;
-        if (points > 3)
-            points = 1;
-    })
+export default class JournalLoader extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {points: '.'}
+        this.inteval = null;
+    }
 
-    return (
-        <div className="journal-loader">
-            {/* <p>Journal is loading</p><span>{getPoints(points)}</span> */}
-            <p>Journal is loading<span>{'.' * points}</span></p>
-        </div>
-    )
+    componentDidMount() {
+        this.inteval = setInterval(() => {
+            this.setState((prev_state) => {
+                var new_points = this.state.points + '.';
+                if (new_points.length > 3) {
+                    new_points = '.'
+                }
+
+                return { points: new_points }
+            })
+        }, 300)
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.inteval);
+    }
+
+    render() {
+        return (
+            <div className="journal-loader">
+                <p>Journal is loading<span>{this.state.points}</span></p>
+            </div>
+        )
+    }
+    
 }
 
 // function getPoints(number) {
