@@ -23,8 +23,8 @@ router.get('/api/init_table', (req, res) => {
 
 router.get('/api/messages', (req,res) => {
     res.setHeader('Content-Type', 'application/json')
-    var id = (req.query.id == undefined) ? 0 : req.query.id
-    DataWorker.excute_request_all(`SELECT * FROM messages WHERE frequency="${id}"`).then(rows => {
+    var frequency = (req.query.id == undefined) ? 0 : req.query.id
+    DataWorker.excute_request_all(`SELECT * FROM messages WHERE frequency="${frequency}"`).then(rows => {
         res.send({ messages: rows })
     })
 })
@@ -37,9 +37,9 @@ router.post('/api/new_message', (req,res) => {
     res.sendStatus(200)
 })
 
-router.post('/api/delete_message/:id', (req,res) => {
+router.post('/api/delete_message', (req,res) => {
     res.setHeader('Content-Type', 'application/json')
-    DataWorker.excute_request_all(`DELETE FROM messages WHERE id='${req.params.id}'`)
+    DataWorker.excute_request_all(`DELETE FROM messages WHERE id='${req.query.id}'`)
     res.sendStatus(200)
 })
 
