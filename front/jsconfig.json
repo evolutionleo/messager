@@ -3,7 +3,8 @@
         "baseUrl": "./",
         "paths": {
             "@env": ["env.js"],
-            "@components/*": ["components/*"]
+            "@components/*": ["components/*"],
+            "@styles/*": ["styles/*"]
         }
     }
 }

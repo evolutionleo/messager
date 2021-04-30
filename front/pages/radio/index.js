@@ -1,7 +1,7 @@
+import React from 'react'
 
-
-export default function() {
+export default function RadioPage() {
     return (
-        <h1>this is a post</h1>
+        <h1>Radio:</h1>
     )
 }

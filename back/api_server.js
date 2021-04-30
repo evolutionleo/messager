@@ -23,8 +23,8 @@ router.get('/api/init_table', (req, res) => {
 
 router.get('/api/messages', (req,res) => {
     res.setHeader('Content-Type', 'application/json')
-    var id = (req.query.id == undefined) ? 0 : req.query.id
-    DataWorker.excute_request_all(`SELECT * FROM messages WHERE frequency="${id}"`).then(rows => {
+    var frequency = (req.query.frequency == undefined) ? 0 : req.query.frequency
+    DataWorker.excute_request_all(`SELECT * FROM messages WHERE frequency="${frequency}"`).then(rows => {
         res.send({ messages: rows })
     })
 })
