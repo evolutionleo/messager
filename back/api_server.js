@@ -17,13 +17,14 @@ router.use(cors(corsOptions));
 const DataWorker = new db_Worker("db.db")
 
 router.get('/api/init_table', (req, res) => {
-    DataWorker.excute_request("CREATE TABLE messages (id int, msg text, chat_id int);")
+    DataWorker.excute_request("CREATE TABLE messages (id int, msg text, frequency int);")
     res.sendStatus(200);
 })
 
 router.get('/api/messages', (req,res) => {
     res.setHeader('Content-Type', 'application/json')
-    DataWorker.excute_request_all(`SELECT * FROM messages`).then(rows => {
+    let id = (req.query.id == undefined) ? 0 : req.query.id
+    DataWorker.excute_request_all(`SELECT * FROM messages WHERE chat_id=${id}`).then(rows => {
         res.send({ messages: rows })
     })
 })
