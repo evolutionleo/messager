@@ -48,10 +48,12 @@ To enable the broadcast function, uncomment the line `//io.emit('chat message ',
 
 API
 ---
-| URL | DESCRIPTION | METHOD |
-|----------------|:---------:|:----------------:|
-| /api/messages | Returns JSON with all messages | GET |
-| /api/init_table | Initializes the messages table(dev) | GET |
+| URL | DESCRIPTION | PARAMS |METHOD |
+|----------------|:---------:|:------------:|:----------------:|
+| /api/messages | Returns JSON with all messages| frequency | GET |
+| /api/init_table | Initializes the messages table(dev)| None | GET |
+| /api/new_message | Add message to database | msg, frequency | POST |
+| /api/delete_message | Delete message by id | id | POST |
 
 
 Let's add in the future
