@@ -1,11 +1,11 @@
 import { useState, useEffect, Component } from "react";
 import JournalList from "@components/JournalList";
 import JournalLoader from "@components/JournalLoader";
-import "@styles/Journal.module.scss";
+import { IJournalEntry } from "@_types/JournalTypes";
 
 
 export interface JournalProps {
-    entries: [],
+    entries: IJournalEntry[],
     loading: boolean
 }
 
@@ -16,6 +16,7 @@ export default class Journal extends Component<JournalProps, {}> {
 
     render() {
         return (
+            // <div className="journal">
             <div className="journal">
                 <div className="journal-title">
                     <h1>Journal:</h1>

@@ -4,7 +4,8 @@
         "paths": {
             "@env": ["env.js"],
             "@components/*": ["components/*"],
-            "@styles/*": ["styles/*"]
+            "@styles/*": ["styles/*"],
+            "@types/*": ["types/*"]
         }
     }
 }

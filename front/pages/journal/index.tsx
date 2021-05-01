@@ -7,10 +7,11 @@ import FrequencySelector from "@components/FrequencySelector";
 
 import { api_url } from "@env";
 import axios from "axios";
+import { IJournalEntry } from '@_types/JournalTypes';
 
 
 export interface JournalState {
-    entries: [],
+    entries: IJournalEntry[],
     loading: boolean,
     frequency: string
 }
@@ -42,6 +43,12 @@ export default class JournalPage extends React.Component<{}, JournalState> {
         const query_params = "frequency="+this.state.frequency;
         axios.get(api_url+'/messages?'+query_params).then((res) => {
             var messages = res.data.messages;
+            messages.map((message) => {
+                message.text = message.msg;
+                message.msg = null;
+
+                return message;
+            })
             this.setState({ entries: messages, loading: false });
         })
     }
