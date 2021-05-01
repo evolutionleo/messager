@@ -3,7 +3,7 @@ import JournalEntry from '@components/JournalEntry';
 import { IJournalEntry } from '../types/JournalTypes';
 
 export interface JournalListProps {
-    entries: []
+    entries: IJournalEntry[]
 }
 
 const JournalList:React.FC<JournalListProps> = (props) => {
@@ -11,7 +11,8 @@ const JournalList:React.FC<JournalListProps> = (props) => {
         <div className="journal-entries">
             {props.entries.length ?
                 props.entries.map((entry:IJournalEntry) => {
-                    return <JournalEntry content={entry} key={entry.id} />
+                    return <JournalEntry message={entry} key={entry.id} />
+                    // return <JournalEntry {...entry} />
                 })
                 : <div className="journal-empty">
                     <p>The journal is empty!</p>
