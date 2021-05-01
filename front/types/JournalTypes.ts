@@ -1,7 +1,9 @@
 export interface IJournalEntry {
     type: JournalEntryType;
-    title?: string;
+    id: string;
+    frequency: string;
     content: {
+        title?: string;
         text: string;
     }
 }
