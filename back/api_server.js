@@ -17,7 +17,7 @@ router.use(cors(corsOptions));
 const DataWorker = new db_Worker("db.db")
 
 router.get('/api/init_table', (req, res) => {
-    DataWorker.excute_request("CREATE TABLE messages (id int, msg text, frequency string);")
+    DataWorker.excute_request("CREATE TABLE messages (id int, text text, frequency string);")
     res.sendStatus(200);
 })
 
@@ -30,7 +30,7 @@ router.get('/api/messages', (req,res) => {
 })
 
 router.post('/api/new_message', (req,res) => {
-    var msg = req.query.msg
+    var msg = req.query.text
     var frequency = req.query.frequency
     var id = crypto.randomBytes(8).toString('hex');
     DataWorker.excute_request(`INSERT OR IGNORE INTO messages VALUES ("${id}", "${msg}", "${frequency}");`)
